@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayZone Hygiene — Professional Play Area & Ball Pit Cleaning Across India</title>
+    <meta name="description" content="PlayZone Hygiene offers professional ball pit and play-area cleaning services across Mumbai, Delhi NCR, Bengaluru, Chennai and major Indian cities. Safe, hospital-grade, child-safe products, GST registered and insured teams.">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #263238;
+            background: #f6f8fb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top contact bar */
+        .topbar {
+            background: linear-gradient(90deg, rgba(0,128,128,0.06), rgba(102,126,234,0.04));
+            padding: 6px 0;
+            font-size: 0.95rem;
+            color: #0f1720;
+            text-align: right;
+        }
+
+        .topbar a { color: #0f1720; text-decoration: none; margin-left: 1rem; font-weight:600; }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0077B6 0%, #00A8E8 100%);
+            color: white;
+            padding: 0.9rem 0;
+            position: fixed;
+            width: 100%;
+            top: 36px; /* pushed below topbar */
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 6px 18px rgba(10, 30, 60, 0.12);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* remove previous emoji before rule */
+        .logo::before { content: none; }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00A8E8 0%, #0077B6 100%);
+            box-shadow: 0 6px 14px rgba(0,118,182,0.18);
+        }
+
+        .logo-mark svg { width: 26px; height: 26px; }
+
+        .logo-text { font-size: 1.25rem; font-weight: 800; letter-spacing: 0.2px; }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.4rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.25s;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            background: #ff8a65;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(255,138,101,0.18);
+        }
+
+        .cta-button:hover {
+            background: #ff7043;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #00A8E8 0%, #0077B6 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="3" fill="white" opacity="0.1"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"/></circle><circle cx="800" cy="300" r="2" fill="white" opacity="0.1"><animate attributeName="opacity" values="0.1;0.4;0.1" dur="2s" repeatCount="indefinite"/></circle><circle cx="400" cy="600" r="2" fill="white" opacity="0.1"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="4s" repeatCount="indefinite"/></circle></svg>');
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: .8rem;
+            text-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 1.6rem;
+            opacity: 0.95;
+            max-width: 900px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+        .hero-buttons {
+            display:flex;
+            gap:1rem;
+            justify-content:center;
+            flex-wrap:wrap;
+        }
+
+        .btn-primary {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 15px 30px;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(14,30,45,0.06);
+            text-align: center;
+            transition: transform 0.28s, box-shadow 0.28s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 46px rgba(14,30,45,0.08);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        /* Industries We Serve */
+        .industries {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .industries .subtitle {
+            text-align: center;
+            color: #606f7b;
+            margin-top: 0.4rem;
+            font-size: 1.05rem;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.6rem;
+            margin-top: 2.2rem;
+        }
+
+        .industry-card {
+            background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 28px rgba(14,30,45,0.04);
+            text-align: center;
+            min-height: 170px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        .industry-card .icon {
+            font-size: 2.2rem;
+            width: 72px;
+            height: 72px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 6px;
+            background: linear-gradient(135deg, rgba(0,119,182,0.08), rgba(0,168,232,0.06));
+        }
+
+        .industry-card h4 {
+            font-size: 1.05rem;
+            margin: 0.2rem 0;
+            color: #0f1720;
+            font-weight: 700;
+        }
+
+        .industry-card p { color: #566272; font-size: 0.95rem; margin: 0; }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            width:72px;
+            height:72px;
+            background: linear-gradient(135deg,#0077B6,#00A8E8);
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin:0 auto 0.9rem;
+            font-size:1.4rem;
+            color:#fff;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #f4f8fb 0%, #ffffff 100%);
+            color: #0f1720;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form textarea {
+            grid-column: 1 / -1;
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            grid-column: 1 / -1;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background:#0b1320;
+            color:#cbd5e1;
+            padding:2rem 0;
+            text-align:center;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .form-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card,
+        .feature {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top contact bar -->
+    <div class="topbar">
+        <div class="container">
+            <div style="float:left; font-weight:600; color:#0f1720;">GSTIN: 27AAXPA0000A1Z5</div>
+            <div style="float:right;">
+                <a href="tel:+919844753810">📞 +91 98447 53810</a>
+                <a href="mailto:india@playcleanpro.in">📧 india@playcleanpro.in</a>
+                <a href="#contact">📍 Serving Mumbai • Delhi NCR • Bengaluru • Chennai • Across India</a>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+
+    <header>
+        <nav class="container" aria-label="Main navigation">
+            <div class="logo">
+                <span class="logo-mark" aria-hidden="true">
+                    <!-- simple SVG mark: three balls and a sparkle to represent play + hygiene -->
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                        <rect width="64" height="64" rx="10" fill="none" />
+                        <g transform="translate(6 8)">
+                            <circle cx="12" cy="12" r="8" fill="#fff" opacity="0.95" />
+                            <circle cx="34" cy="8" r="6" fill="#fff" opacity="0.95" />
+                            <circle cx="30" cy="30" r="5" fill="#fff" opacity="0.95" />
+                            <path d="M44 4 L48 8 L52 4 L48 2 Z" fill="#ffd54a" opacity="0.95" />
+                        </g>
+                    </svg>
+                </span>
+                <span class="logo-text">Play Clean Pro</span>
+            </div>
+             <ul class="nav-links" role="menu">
+                 <li><a href="#services">Services</a></li>
+                 <li><a href="#features">Why Choose Us</a></li>
+                 <li><a href="#testimonials">Testimonials</a></li>
+                 <li><a href="#contact">Contact</a></li>
+             </ul>
+             <a href="#contact" class="cta-button" aria-label="Get Quote">Get Quote</a>
+         </nav>
+     </header>
+
+    <section class="hero" role="banner">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="floating">Safe. Clean. Joyful — Trusted Play Zones Across India</h1>
+                <p>PlayZone Hygiene delivers professional, child-safe play area and ball pit cleaning services across major Indian cities. We use hospital-grade, non-toxic sanitizers and follow industry best-practices for deep-cleaning, disinfection and odour control.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Book a Service</a>
+                    <a href="#services" class="btn-secondary">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Specialized Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🏀</span>
+                    <h3>Ball Pit Deep Cleaning</h3>
+                    <p>Individual ball washing, sanitization of pit base and sidewalls, UV sanitization options and antimicrobial treatments compliant with child-safety norms.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🎪</span>
+                    <h3>Play Structure Sanitization</h3>
+                    <p>Safe disinfection for slides, climbing frames and play tunnels using non-toxic, Indian-regulation-friendly products.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🧼</span>
+                    <h3>Soft Play Area Cleaning</h3>
+                    <p>Complete cleaning for foam blocks, mats and soft equipment, with odor control and stain treatment to preserve appearance and safety.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🏢</span>
+                    <h3>Commercial Play Centers</h3>
+                    <p>Flexible scheduling for restaurants, malls, daycares and entertainment centers with minimal downtime and transparent GST invoicing.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🔍</span>
+                    <h3>Safety Inspections</h3>
+                    <p>Site audits and safety checks to identify hazards, recommend repairs and ensure compliance with local safety guidelines.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">📅</span>
+                    <h3>Maintenance Programs</h3>
+                    <p>Custom recurring cleaning plans (weekly, bi-weekly, monthly) with priority scheduling and discounted rates for ongoing clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve (India) -->
+    <section class="industries" aria-label="Industries we serve">
+        <div class="container">
+            <h2 class="section-title">Industries We Serve</h2>
+            <p class="subtitle">Trusted by business owners across India — customised cleaning for each setting</p>
+
+            <div class="industries-grid" role="list">
+                <div class="industry-card" role="listitem">
+                    <div class="icon">🍽️</div>
+                    <h4>Restaurants & Cafes</h4>
+                    <p>Family dining, quick-serve outlets and cloud kitchens — hygienic play corners kept spotless.</p>
+                </div>
+
+                <div class="industry-card" role="listitem">
+                    <div class="icon">🛍️</div>
+                    <h4>Shopping Centres & Malls</h4>
+                    <p>Mall play areas and soft courts with scheduled deep-cleaning to meet high footfall demands.</p>
+                </div>
+
+                <div class="industry-card" role="listitem">
+                    <div class="icon">🏫</div>
+                    <h4>Daycare & Preschools</h4>
+                    <p>Gentle, non-toxic treatments and MSDS-certified products for young children and staff peace-of-mind.</p>
+                </div>
+
+                <div class="industry-card" role="listitem">
+                    <div class="icon">🎮</div>
+                    <h4>Entertainment Centres & Arcades</h4>
+                    <p>Arcades, family fun centres and indoor playdomes with regular sanitization programs.</p>
+                </div>
+
+                <div class="industry-card" role="listitem">
+                    <div class="icon">🏨</div>
+                    <h4>Hotels, Resorts & Clubs</h4>
+                    <p>Kids' clubs and guest-facing play areas maintained to hospitality standards and guest expectations.</p>
+                </div>
+
+                <div class="industry-card" role="listitem">
+                    <div class="icon">🏘️</div>
+                    <h4>Community & Residential Complexes</h4>
+                    <p>Society play zones, community halls and birthday-party setups with one-off or recurring cleaning plans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Parents & Business Owners Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <h3>Child-Safe Products</h3>
+                    <p>All products are non-toxic, hypoallergenic and chosen for use in child environments. We provide MSDS on request.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast & Efficient</h3>
+                    <p>Professional teams complete most on-site jobs within 2-4 hours with minimal disruption to your operations.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Insured & GST Registered</h3>
+                    <p>Fully insured technicians, GST-compliant billing and documented safety procedures for corporate clients.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💯</div>
+                    <h3>Satisfaction Guarantee</h3>
+                    <p>We stand by our work: if you're not satisfied, we'll return and re-clean at no extra charge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Testimonials Section -->
+    <section id="testimonials" style="padding:60px 0; background:#fff;">
+        <div class="container">
+            <h2 class="section-title">Trusted by Families & Businesses Across India</h2>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.2rem; margin-top:1.6rem;">
+                <div style="background:#f8fbff; padding:1.2rem; border-radius:10px; box-shadow:0 8px 20px rgba(2,6,23,0.03);">
+                    <strong>Sunita R., Mumbai</strong>
+                    <p style="margin-top:0.6rem;">"Excellent service. The team was punctual, thorough and the play area looked brand new. Highly recommend for malls and nurseries."</p>
+                </div>
+                <div style="background:#f8fbff; padding:1.2rem; border-radius:10px; box-shadow:0 8px 20px rgba(2,6,23,0.03);">
+                    <strong>HappyKids Playzone, Delhi</strong>
+                    <p style="margin-top:0.6rem;">"Reliable monthly plan, seamless scheduling and professional reporting with GST invoices. Very happy with the results."</p>
+                </div>
+                <div style="background:#f8fbff; padding:1.2rem; border-radius:10px; box-shadow:0 8px 20px rgba(2,6,23,0.03);">
+                    <strong>Ravi K., Bengaluru</strong>
+                    <p style="margin-top:0.6rem;">"Quick turnaround and child-safe products. Our daycare has never smelled better."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Ready for a Cleaner, Safer Play Environment?</h2>
+            <p>Request a free site inspection or get an instant quote for your facility. Most quotes provided within 24 hours across major Indian cities.</p>
+            
+            <form class="contact-form" onsubmit="handleSubmit(event)" aria-label="Contact form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
+                    <input type="email" name="email" placeholder="Email Address" required aria-label="Email address">
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone Number" required aria-label="Phone number">
+                    <select name="service" required style="padding: 15px; border: none; border-radius: 10px; font-size: 1rem; background: rgba(255,255,255,0.96);" aria-label="Select service">
+                        <option value="">Select Service</option>
+                        <option value="ball-pit">Ball Pit Cleaning</option>
+                        <option value="play-structure">Play Structure Cleaning</option>
+                        <option value="soft-play">Soft Play Area</option>
+                        <option value="commercial">Commercial Facility</option>
+                        <option value="maintenance">Maintenance Program</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <textarea name="message" placeholder="Tell us about your facility and cleaning needs..." required aria-label="Message"></textarea>
+                <button type="submit" class="submit-btn">Get Your Free Quote</button>
+            </form>
+            
+            <div style="margin-top: 2rem; font-size: 1.05rem; color:#0f1720;">
+                <p>📞 Call / WhatsApp: <strong><a href="tel:+91 98447 53810" style="color:#0077B6; text-decoration:none;">+91 98765 43210</a></strong></p>
+                <p>📧 Email: <strong><a href="mailto:india@playcleanpro.in" style="color:#0077B6; text-decoration:none;">india@playcleanpro.in</a></strong></p>
+                <p>🕒 Available 7 days a week, 9AM - 7PM IST</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PlayClean Pro. All rights reserved. | GSTIN: 27AAXPA0000A1Z5 | Licensed & Insured</p>
+            <p style="margin-top:0.5rem; font-size:0.95rem;">Serving Mumbai • Delhi NCR • Bengaluru • Chennai • Pune • Hyderabad • Across India</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Form submission handler (mock)
+        function handleSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            alert('Thank you, ' + (data.name || '') + '! We\'ll contact you within 24 hours with a quote.');
+            event.target.reset();
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (!header) return;
+            if (window.scrollY > 80) {
+                header.style.background = 'rgba(0,119,182,0.95)';
+                header.style.top = '36px';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #0077B6 0%, #00A8E8 100%)';
+                header.style.top = '36px';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observeElements = document.querySelectorAll('.service-card, .feature');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.12 });
+
+        observeElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s, transform 0.6s';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
